@@ -51,13 +51,13 @@ namespace MeshDistance.Demo
                 {
                     _progress.transform.localScale = new Vector3(normalizedProgress, 1.0f, 1.0f);
                 });
-                Task<MeshDistanceMeasureAsync.MeshDistance> task = _measure.GetDistance(_meshFilter0, _meshFilter1, progress);
+                Task<MeshDistance> task = _measure.GetDistance(_meshFilter0, _meshFilter1, progress);
                 while (!task.IsCompleted)
                 {
                     yield return null;
                 }
                 _textDistance.text = $"Distance: {task.Result.Distance}";
-                _textInfo.text = $"Lap: {task.Result.Lap}({task.Result.NumberOfTriangls0} x {task.Result.NumberOfTriangls1})";
+                _textInfo.text = $"Lap: {task.Result.Lap}({task.Result.NumberOfTriangles0} x {task.Result.NumberOfTriangles1})";
 
 
             }
