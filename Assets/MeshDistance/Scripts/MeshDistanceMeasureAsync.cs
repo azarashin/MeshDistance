@@ -99,7 +99,7 @@ namespace MeshDistance
             _results[(m0, m1)].Scale1 = t1.lossyScale;
             return Task.Run(() =>
             {
-                float distance = MeshDistanceMeasure.GetDistance(triangls0, triangls1, progress);
+                float distance = MeshDistanceMeasure.GetDistance(triangls0, triangls1, progress, true);
                 DateTime lap1 = DateTime.Now;
                 _results[(m0, m1)].Distance = distance;
                 _results[(m0, m1)].Active = true;
